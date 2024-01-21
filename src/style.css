@@ -1,0 +1,53 @@
+body {
+  font-family: sans-serif;
+  background-color: #1c1c1c;
+  color: white;
+}
+
+.btn {
+  background-color: transparent;
+  color: white;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+}
+
+.btn:hover {
+  color: rgb(0, 255, 106);
+}
+
+.playing {
+  text-align: center;
+}
+section
+{
+  height: 450px;
+  width: 300px;
+  background: linear-gradient(110.2deg, rgb(111, 71, 133) 3.6%, rgb(232, 129, 166) 50.3%, rgb(237, 237, 183) 97.4%);
+  border-radius: 30px;
+}
+
+img{
+border-radius: 100px;
+margin-top: "20px";
+}
+h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+  
+}
+h2
+{
+  color: white;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+input{
+  width: 250px;
+}

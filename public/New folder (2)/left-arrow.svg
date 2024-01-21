@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="64px" height="65px" viewBox="0 0 64 65" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <path d="M0 0L64 0L64 64L0 64L0 0Z" id="path_1" />
+    <clipPath id="mask_1">
+      <use xlink:href="#path_1" />
+    </clipPath>
+  </defs>
+  <g id="arrow-down-sign-to-navigate" transform="matrix(1.2675908E-06 1 -1 1.2675908E-06 64 0)">
+    <path d="M0 0L64 0L64 64L0 64L0 0Z" id="Background" fill="none" fill-rule="evenodd" stroke="none" />
+    <g clip-path="url(#mask_1)">
+      <g id="Group" transform="translate(-0.001159668 13.759277)">
+        <path d="M31.9998 36.4818C30.8528 36.4818 29.706 36.0438 28.8315 35.1698L1.3129 7.65094C-0.437635 5.90041 -0.437635 3.0622 1.3129 1.31237C3.06274 -0.437458 5.90037 -0.437458 7.65105 1.31237L31.9998 25.6626L56.3487 1.31322C58.0993 -0.436611 60.9366 -0.436611 62.6863 1.31322C64.4377 3.06305 64.4377 5.90125 62.6863 7.65179L35.1682 35.1706C34.2933 36.0448 33.1464 36.4818 31.9998 36.4818L31.9998 36.4818Z" id="Shape" fill="#000000" fill-rule="evenodd" stroke="none" />
+      </g>
+    </g>
+  </g>
+</svg>

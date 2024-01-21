@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins',sans-serif;
+}
+.login-container, .signup-container, .dashboard-container {
+            max-width: 400px;
+            margin: auto;
+        }
+        .dashboard-container {
+            text-align: center;
+            display: none;
+            background-color: #ff69b4; /* Pink background color */
+            padding: 20px;
+            margin-top: 250px;
+            border-radius: 10px;
+        }
+
+        .dashboard-buttons {
+            margin-top: 20px;
+        }
+
+        /* Additional Styles */
+        .form-check {
+            margin-bottom: 10px;
+        }
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(https://user-images.githubusercontent.com/13468728/233847739-219cb494-c265-4554-820a-bd3424c59065.jpg);
+  background-size: cover;
+}
+
+section {
+    position: relative;
+    max-width: 400px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(55px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px 70px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    max-width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.5s ease-in-out;
+}
+
+
+
+
+input:focus ~ label, 
+input:valid ~ label {
+    top: -5px;
+}
+
+
+
+
+
+.inputbox input {
+    width: 100%;
+    height: 20px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 35px 0 5px;
+    color: #fff;
+    
+}
+
+.input-box{
+  position: relative;
+  width: 100%;
+  height: 50px;
+  
+  margin: 30px 0;
+}
+.input-box input{
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
+}
+.input-box input::placeholder{
+  color: #fff;
+}
+.input-box i{
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  transform: translate(-50%);
+  font-size: 20px;
+
+}
+
+
+.forget {
+    margin: 35px 0;
+    font-size: 0.85rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+ 
+}
+
+.forget label {
+    display: flex;
+    align-items: center;
+}
+
+.forget label input {
+    margin-right: 3px;
+}
+
+.forget a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.forget a:hover {
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background-color: rgb(255, 255,255, 1);
+    border: none;
+    outline: none;
+    
+    font-size: 1rem;
+    font-weight: 600;
+
+}
+
+
+
+button:hover {
+  background-color: rgb(255, 255,255, 0.5); 
+}
+    </style>
+    
+<body>
+    
+    <!-- Login Page -->
+<div class="container login-container">
+    <h1>Login</h1>
+    <form id="loginForm">
+        <div class="form-group input-box">
+            <label for="">Username: </label>
+            <input type="email" class="form-control" id="loginUsername" required>
+           
+        </div>
+        <div class="form-group input-box">
+            <label for="">Password:</label>
+            <input type="password" class="form-control" id="loginPassword"required>
+                    
+            
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="rememberMe">
+            <label class="form-check-label" for="rememberMe">Remember me</label>
+        </div>
+        <a href="#" onclick="forgotPassword()">Forgot Password?</a>
+        <button type="button" class="btn btn-primary" onclick="validateLogin()">Login</button>
+        <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+    </form>
+</div>
+        <!-- Signup Page -->
+<div class="container signup-container" style="display: none;">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+        <div class="form-group">
+            <label for="signupName">Name:</label>
+            <input type="text" class="form-control" id="signupName" required>
+        </div>
+        <div class="form-group">
+            <label for="signupPassword">Password:</label>
+            <input type="password" class="form-control" id="signupPassword" required>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" class="form-control" id="confirmPassword" required>
+        </div>
+        <button type="button" class="btn btn-success" onclick="registerUser()">Sign Up</button>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login</a></p>
+    </form>
+</div>
+
+<!-- Dashboard Page -->
+<div class="container dashboard-container">
+    <div class="dashboard-buttons">
+        <button type="button" class="btn btn-success">Movie HUB</button>
+        <button type="button" class="btn btn-danger">Music Player</button>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function validateLogin() {
+        var username = document.getElementById('loginUsername').value;
+        var password = document.getElementById('loginPassword').value;
+
+        if (username && password) {
+            // Successful login, hide login and signup containers, show dashboard container
+            document.querySelector('.login-container').style.display = 'none';
+            document.querySelector('.signup-container').style.display = 'none';
+            document.querySelector('.dashboard-container').style.display = 'block';
+        } else {
+            alert('Please fill out all fields.');
+        }
+    }
+
+    function showSignup() {
+        // Show signup container and hide login container
+        document.querySelector('.login-container').style.display = 'none';
+        document.querySelector('.signup-container').style.display = 'block';
+    }
+
+    function showLogin() {
+        // Show login container and hide signup container
+        document.querySelector('.signup-container').style.display = 'none';
+        document.querySelector('.login-container').style.display = 'block';
+    }
+
+    function registerUser() {
+        var name = document.getElementById('signupName').value;
+        var password = document.getElementById('signupPassword').value;
+        var confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (name && password && confirmPassword && password === confirmPassword) {
+            // Successful registration, hide signup container and show login container
+            document.querySelector('.signup-container').style.display = 'none';
+            document.querySelector('.login-container').style.display = 'block';
+        } else {
+            alert('Please fill out all fields and make sure passwords match.');
+        }
+    }
+
+    function forgotPassword() {
+        var email = prompt('Please enter your email address:');
+        if (email) {
+            // Implement your logic for password recovery (e.g., send reset link to the email)
+            alert('Password recovery functionality goes here.');
+        }
+    }
+</script>
+</body>
+</html>
